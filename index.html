@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comunidad Kamëntsá | Valle de Sibundoy</title>
+    <!-- Link to separated CSS file -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+    <!-- Header & Navigation -->
     <header>
         <h1>Kamëntsá</h1>
         <nav>
@@ -21,12 +23,14 @@
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section id="hero">
         <h2>Tejiendo Nuestro Futuro</h2>
         <p>Descubre la sabiduría ancestral del pueblo Kamëntsá del Valle de Sibundoy. Apoya a nuestra comunidad y ayúdanos a construir un hogar duradero para nuestra cultura.</p>
         <button class="btn-main" id="heroDonateBtn">Apoya el Centro Cultural</button>
     </section>
 
+    <!-- Our Story Section -->
     <section id="story">
         <div class="story-image"></div>
         <div class="story-text">
@@ -37,9 +41,11 @@
         </div>
     </section>
 
+    <!-- Artisan Shop Section -->
     <section id="shop">
         <h2 class="section-title">Artesanía Tradicional</h2>
         <div class="grid">
+            <!-- Product 1 -->
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1580828343064-fde4cad202d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Faja Tradicional">
                 <h3>Tšombiachs (Faja Tejida)</h3>
@@ -47,6 +53,7 @@
                 <span class="price">$45.00</span>
                 <button class="btn-buy" onclick="alert('Esto se conectará a tu pasarela de pago (ej. Shopify/Stripe).')">Comprar y Apoyar</button>
             </div>
+            <!-- Product 2 -->
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Máscara Tallada">
                 <h3>Máscara Ceremonial de Madera</h3>
@@ -54,6 +61,7 @@
                 <span class="price">$120.00</span>
                 <button class="btn-buy" onclick="alert('Esto se conectará a tu pasarela de pago (ej. Shopify/Stripe).')">Comprar y Apoyar</button>
             </div>
+            <!-- Product 3 -->
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1589802829985-817e51171b92?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Collar de Chaquiras">
                 <h3>Chaquiras (Arte en Mostacilla)</h3>
@@ -64,6 +72,7 @@
         </div>
     </section>
 
+    <!-- Cultural Center Project Section -->
     <section id="project">
         <h2 class="section-title">El Proyecto del Centro Cultural</h2>
         <p style="max-width: 800px; margin: 0 auto 2rem;">Nuestro sueño es construir un espacio físico en el corazón del Valle de Sibundoy. Este centro servirá como una escuela de artes tradicionales para nuestros jóvenes, una biblioteca de nuestra historia no escrita y un lugar acogedor para que los visitantes aprendan nuestras costumbres con respeto.</p>
@@ -78,6 +87,7 @@
         <button class="btn-main" id="projectDonateBtn" style="cursor: pointer; padding: 15px 30px; font-size: 1.2rem;">Donar Ahora</button>
     </section>
 
+    <!-- Donation Pop-up Window (Modal) -->
     <div class="modal-overlay" id="donationModal">
         <div class="modal-content">
             <button class="modal-close" id="closeModalBtn">&times;</button>
@@ -85,17 +95,21 @@
             <p>Tu contribución ayuda directamente a preservar la memoria y el arte del pueblo Kamëntsá.</p>
             
             <div class="form-container">
-                <p style="color: #888; padding: 20px;">[Aquí aparecerá tu formulario de Donorbox, PayPal o pasarela de pagos simulada]</p>
-                </div>
+                <!-- Código de Donorbox incrustado con éxito -->
+                <script type="module" src="https://donorbox.org/widgets.js" async></script>
+                <dbox-widget campaign="culture-center" type="donation_form" enable-auto-scroll="true"></dbox-widget>
+            </div>
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
         <h2>Territorio Digital Kamëntsá</h2>
         <p style="margin: 1rem 0;">Valle de Sibundoy, Putumayo, Colombia</p>
         <p>&copy; 2026 Comunidad Kamëntsá. Todos los derechos y propiedad cultural reservados.</p>
     </footer>
 
+    <!-- Link to separated JS file -->
     <script src="js/script.js"></script>
 </body>
 </html>
