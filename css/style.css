@@ -231,14 +231,14 @@ h2.section-title {
     margin-bottom: 2rem;
 }
 
-/* Pop-up Window (Modal) Styling */
+/* Pop-up Window (Modal) Styling - OPTIMIZED FOR SCROLL */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.75); /* Un poco más oscuro para dar más contraste */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -246,6 +246,7 @@ h2.section-title {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
+    padding: 10px; /* Evita que el modal toque los bordes físicos en celulares */
 }
 
 .modal-overlay.active {
@@ -255,28 +256,31 @@ h2.section-title {
 
 .modal-content {
     background-color: var(--bg-light);
-    padding: 2rem 1.5rem 1.5rem;
-    border-radius: 8px;
-    width: 90%;
+    padding: 2.5rem 1.5rem 1.5rem;
+    border-radius: 12px; /* Bordes un poco más suaves */
+    width: 100%;
     max-width: 550px;
-    max-height: 90vh; /* No permite que la ventana supere la altura de la pantalla */
+    height: auto;
+    max-height: 92vh; /* Aprovecha mejor el espacio vertical de la pantalla */
     position: relative;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
     text-align: center;
     display: flex;
     flex-direction: column;
+    overflow: hidden; /* Obliga a que todo lo que se desborde se controle adentro */
 }
 
 .modal-close {
     position: absolute;
-    top: 10px;
+    top: 12px;
     right: 15px;
-    font-size: 1.8rem;
+    font-size: 2rem;
     background: none;
     border: none;
     cursor: pointer;
     color: var(--text-dark);
-    z-index: 10;
+    z-index: 2010; /* Asegura quedarse por encima de cualquier elemento de Donorbox */
+    line-height: 1;
 }
 
 .modal-close:hover {
@@ -285,29 +289,53 @@ h2.section-title {
 
 .modal-content h3 {
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
+    font-size: 1.6rem;
 }
 
-/* Contenedor adaptativo para el formulario de Donorbox */
+.modal-content > p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+/* Contenedor adaptativo con scroll REAL y forzado */
 .form-container {
     width: 100%;
-    max-height: 65vh; /* Limita la altura del formulario */
-    overflow-y: auto; /* Activa el scroll vertical si el contenido sobrepasa el límite */
+    flex-grow: 1; /* Absorbe el espacio disponible del modal */
+    overflow-y: auto !important; /* Fuerza la aparición del scroll vertical */
+    overflow-x: hidden;
     background: #fff;
-    border-radius: 4px;
-    margin-top: 1rem;
-    padding: 5px;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+    padding: 10px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05); /* Sombra interna para definir el área */
+    -webkit-overflow-scrolling: touch; /* Suaviza el scroll en dispositivos iOS/Safari */
 }
 
-/* Configuración de barras de scroll más estéticas para navegadores modernos */
-.form-container::-webkit-scrollbar {
-    width: 6px;
+/* Asegura que el widget de Donorbox respete al contenedor padre */
+.form-container dbox-widget, 
+.form-container iframe {
+    max-width: 100% !important;
+    display: block;
 }
-.form-container::-webkit-scrollbar-thumb {
-    background-color: #ccc;
+
+/* Estilización de la barra de scroll interna */
+.form-container::-webkit-scrollbar {
+    width: 8px;
+}
+.form-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
     border-radius: 4px;
 }
+.form-container::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 4px;
+}
+.form-container::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color); /* Cambia al color arcilla al pasar el mouse */
+}
+
 
 /* Footer */
 footer {
