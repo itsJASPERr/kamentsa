@@ -255,24 +255,28 @@ h2.section-title {
 
 .modal-content {
     background-color: var(--bg-light);
-    padding: 2rem;
+    padding: 2rem 1.5rem 1.5rem;
     border-radius: 8px;
     width: 90%;
     max-width: 550px;
+    max-height: 90vh; /* No permite que la ventana supere la altura de la pantalla */
     position: relative;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .modal-close {
     position: absolute;
-    top: 15px;
-    right: 20px;
+    top: 10px;
+    right: 15px;
     font-size: 1.8rem;
     background: none;
     border: none;
     cursor: pointer;
     color: var(--text-dark);
+    z-index: 10;
 }
 
 .modal-close:hover {
@@ -281,21 +285,28 @@ h2.section-title {
 
 .modal-content h3 {
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-size: 1.8rem;
 }
 
-/* Placeholder container for your embedded form */
+/* Contenedor adaptativo para el formulario de Donorbox */
 .form-container {
     width: 100%;
-    min-height: 400px;
+    max-height: 65vh; /* Limita la altura del formulario */
+    overflow-y: auto; /* Activa el scroll vertical si el contenido sobrepasa el límite */
     background: #fff;
-    border: 1px dashed #ccc;
     border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-top: 1rem;
+    padding: 5px;
+}
+
+/* Configuración de barras de scroll más estéticas para navegadores modernos */
+.form-container::-webkit-scrollbar {
+    width: 6px;
+}
+.form-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
 }
 
 /* Footer */
