@@ -1,28 +1,43 @@
-/* Color Palette & Base Styles */
+/* ==========================================================================
+   PALETA DE COLORES ANCESTRAL (Estilo Pintura Kamëntsá)
+   ========================================================================== */
 :root {
-    --primary-color: #2c4c3b; /* Deep forest green */
-    --accent-color: #d35400; /* Warm terracotta/woven dye */
-    --bg-light: #f9f6f0; /* Natural fiber off-white */
-    --text-dark: #333333;
-    --text-light: #ffffff;
+    --bg-dark: #0c0c0c;       /* La Madre Tierra fértil, el útero del Valle */
+    --primary-paint: #f6007b;  /* Fucsia encendido de las lanas y chaquiras */
+    --accent-gold: #f39c12;    /* Amarillo dorado del Sol (Shinÿak) */
+    --turquoise: #00d2d3;      /* Turquesa vivo de los ríos del Valle */
+    --text-light: #f9f6f0;     /* Blanco fibra natural para lectura clara */
+    --card-bg: #161a18;        /* Verde selva ultra oscuro para fondos de tarjetas */
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Impact', 'Arial Black', 'Segoe UI', sans-serif; /* Buscando fuerza en trazos */
 }
 
 body {
-    background-color: var(--bg-light);
-    color: var(--text-dark);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
     line-height: 1.6;
+    /* Sutil textura que simula el tramado del tejido de lana o madera */
+    background-image: radial-gradient(#222 10%, transparent 10%),
+                      radial-gradient(#222 10%, transparent 10%);
+    background-size: 8px 8px;
+    background-position: 0 0, 4px 4px;
 }
 
-/* Navigation */
+p, a, span {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía limpia para lectura */
+}
+
+/* ==========================================================================
+   NAVEGACIÓN (El Inicio del Camino)
+   ========================================================================== */
 header {
-    background-color: var(--primary-color);
+    background-color: rgba(12, 12, 12, 0.95);
+    border-bottom: 4px solid var(--primary-paint);
     padding: 1rem 5%;
     position: fixed;
     width: 100%;
@@ -34,9 +49,11 @@ header {
 }
 
 header h1 {
-    color: var(--text-light);
-    font-size: 1.5rem;
-    letter-spacing: 1px;
+    color: var(--accent-gold);
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px var(--primary-paint);
 }
 
 nav ul {
@@ -49,196 +66,270 @@ nav ul {
 nav ul li a {
     color: var(--text-light);
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: var(--accent-color);
+    color: var(--turquoise);
 }
 
+/* Botón Donar del Menú - Forma de Ofrenda */
 .btn-donate {
-    background-color: var(--accent-color);
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    background-color: var(--primary-paint);
+    color: var(--text-light);
+    padding: 0.6rem 1.2rem;
+    border: 2px solid var(--accent-gold);
+    border-radius: 0px; /* Bordes rectos, geométricos como el telar */
     font-weight: bold;
     cursor: pointer;
-    border: none;
-    color: var(--text-light);
+    text-transform: uppercase;
+    box-shadow: 4px 4px 0px var(--turquoise);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Hero Section */
+.btn-donate:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--accent-gold);
+    background-color: var(--turquoise);
+    color: var(--bg-dark);
+}
+
+/* ==========================================================================
+   HERO (Tejiendo el Futuro)
+   ========================================================================== */
 #hero {
     height: 100vh;
-    background: linear-gradient(rgba(44, 76, 59, 0.7), rgba(44, 76, 59, 0.7)), url('https://images.unsplash.com/photo-1518182170546-076616fdcbfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+    /* Contraste místico con los colores vivos superpuestos */
+    background: linear-gradient(rgba(12, 12, 12, 0.85), rgba(22, 26, 24, 0.9)), 
+                url('https://images.unsplash.com/photo-1518182170546-076616fdcbfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: var(--text-light);
     padding: 0 20px;
     margin-top: 60px;
 }
 
 #hero h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 4rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 4px 4px 0px var(--primary-paint), -2px -2px 0px var(--turquoise);
+    margin-bottom: 1.5rem;
 }
 
 #hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    max-width: 700px;
+    color: #ccc;
+    margin-bottom: 2.5rem;
 }
 
 .btn-main {
-    background-color: var(--bg-light);
-    color: var(--primary-color);
-    padding: 10px 24px;
+    background-color: var(--accent-gold);
+    color: var(--bg-dark);
+    padding: 12px 30px;
     text-decoration: none;
-    font-size: 1.1rem;
-    border-radius: 4px;
+    font-size: 1.2rem;
     font-weight: bold;
-    transition: background 0.3s;
-    display: inline-block;
+    text-transform: uppercase;
     border: none;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px var(--primary-paint);
+    transition: all 0.3s ease;
 }
 
 .btn-main:hover {
-    background-color: var(--accent-color);
+    background-color: var(--primary-paint);
     color: var(--text-light);
+    box-shadow: 4px 4px 0px var(--turquoise);
 }
 
-/* General Section Styling */
+/* ==========================================================================
+   SECCIONES Y DETALLES PINTADOS
+   ========================================================================== */
 section {
-    padding: 5rem 10%;
+    padding: 6rem 10%;
+    position: relative;
+}
+
+/* Separadores que simulan las líneas de una faja tejida tradicional */
+section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary-paint) 25%, var(--accent-gold) 25%, var(--accent-gold) 50%, var(--turquoise) 50%, var(--turquoise) 75%, var(--primary-paint) 75%);
 }
 
 h2.section-title {
     text-align: center;
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 3rem;
+    font-size: 3rem;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+    text-shadow: 2px 2px 0px var(--primary-paint);
 }
 
-/* Our Story */
+/* Nuestra Historia */
 #story {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
     align-items: center;
 }
 
-.story-text {
-    flex: 1;
+.story-text h2 {
+    color: var(--turquoise) !important;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.story-text p {
+    color: #e0e0e0;
+    font-size: 1.1rem;
 }
 
 .story-image {
     flex: 1;
-    background-color: #ddd;
-    height: 300px;
-    border-radius: 8px;
+    height: 380px;
+    border: 6px solid var(--primary-paint);
+    box-shadow: 8px 8px 0px var(--accent-gold);
+    border-radius: 0px;
     background: url('https://images.unsplash.com/photo-1604028297491-9e7fbcff2d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover;
 }
 
-/* Artisan Shop */
+/* Tienda Artesanal */
 #shop {
-    background-color: #fff;
+    background-color: #111;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
 }
 
 .card {
-    background-color: var(--bg-light);
-    border-radius: 8px;
+    background-color: var(--card-bg);
+    border: 3px solid #222;
+    border-radius: 0px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s, border-color 0.3s;
     text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--turquoise);
 }
 
 .card img {
     width: 100%;
-    height: 200px;
+    height: 240px;
     object-fit: cover;
+    border-bottom: 4px solid var(--accent-gold);
 }
 
 .card h3 {
-    margin: 1rem 0 0.5rem;
-    color: var(--primary-color);
+    margin: 1.5rem 0 0.5rem;
+    color: var(--text-light);
+    font-size: 1.4rem;
+    text-transform: uppercase;
 }
 
 .card p {
-    padding: 0 1rem;
-    font-size: 0.9rem;
-    color: #666;
+    padding: 0 1.5rem;
+    font-size: 0.95rem;
+    color: #b3b3b3;
 }
 
 .card .price {
+    font-size: 1.3rem;
     font-weight: bold;
-    color: var(--accent-color);
-    margin: 1rem 0;
+    color: var(--turquoise);
+    margin: 1.5rem 0;
     display: block;
 }
 
 .btn-buy {
     display: block;
     width: 100%;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-    transition: background 0.3s;
+    background-color: #222;
+    color: var(--text-light);
+    padding: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
     border: none;
     cursor: pointer;
-    font-size: 1rem;
+    transition: background 0.3s;
 }
 
-.btn-buy:hover {
-    background-color: var(--accent-color);
+.card:hover .btn-buy {
+    background-color: var(--primary-paint);
 }
 
-/* Cultural Center Project */
+/* ==========================================================================
+   PROYECTO Y BARRA DE PROGRESO (Camino de la Serpiente/Huella)
+   ========================================================================== */
 #project {
     text-align: center;
 }
 
 .progress-container {
     max-width: 600px;
-    margin: 2rem auto;
-    background-color: #ddd;
-    border-radius: 20px;
+    margin: 2.5rem auto;
+    background-color: #222;
+    border: 2px solid var(--text-light);
+    border-radius: 0px;
+    padding: 3px;
     overflow: hidden;
 }
 
 .progress-bar {
-    height: 30px;
-    background-color: var(--accent-color);
+    height: 35px;
+    /* La barra de carga tiene un patrón geométrico andino dinámico */
+    background: repeating-linear-gradient(
+      45deg,
+      var(--primary-paint),
+      var(--primary-paint) 10px,
+      var(--accent-gold) 10px,
+      var(--accent-gold) 20px
+    );
     width: 35%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--text-light);
     font-weight: bold;
+    text-shadow: 1px 1px 2px #000;
 }
 
 .goal-text {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    color: var(--turquoise);
     font-weight: bold;
+    text-transform: uppercase;
     margin-bottom: 2rem;
 }
 
-/* Pop-up Window (Modal) Styling - OPTIMIZED FOR SCROLL */
+/* ==========================================================================
+   VENTANA EMERGENTE (El Altar del Formulario)
+   ========================================================================== */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.75); /* Un poco más oscuro para dar más contraste */
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo negro denso para aislar la experiencia */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -246,7 +337,7 @@ h2.section-title {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-    padding: 10px; /* Evita que el modal toque los bordes físicos en celulares */
+    padding: 10px;
 }
 
 .modal-overlay.active {
@@ -255,100 +346,102 @@ h2.section-title {
 }
 
 .modal-content {
-    background-color: var(--bg-light);
+    background-color: var(--bg-dark);
+    /* Borde grueso que simula un marco de madera pintado con simbología */
+    border: 6px solid var(--accent-gold); 
     padding: 2.5rem 1.5rem 1.5rem;
-    border-radius: 12px; /* Bordes un poco más suaves */
-    width: 100%;
-    max-width: 550px;
-    height: auto;
-    max-height: 92vh; /* Aprovecha mejor el espacio vertical de la pantalla */
+    border-radius: 0px;
+    width: 95%;
+    max-width: 520px;
+    max-height: 92vh;
     position: relative;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 30px rgba(246, 0, 123, 0.4);
     text-align: center;
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Obliga a que todo lo que se desborde se controle adentro */
+    overflow: hidden;
 }
 
 .modal-close {
     position: absolute;
-    top: 12px;
+    top: 10px;
     right: 15px;
-    font-size: 2rem;
+    font-size: 2.5rem;
     background: none;
     border: none;
     cursor: pointer;
-    color: var(--text-dark);
-    z-index: 2010; /* Asegura quedarse por encima de cualquier elemento de Donorbox */
-    line-height: 1;
+    color: var(--primary-paint);
+    z-index: 2010;
 }
 
 .modal-close:hover {
-    color: var(--accent-color);
+    color: var(--turquoise);
 }
 
 .modal-content h3 {
-    color: var(--primary-color);
-    margin-bottom: 0.2rem;
-    font-size: 1.6rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+    font-size: 2rem;
+    letter-spacing: 1px;
 }
 
 .modal-content > p {
-    font-size: 0.95rem;
-    color: #555;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #aaa;
+    margin-bottom: 1rem;
 }
 
-/* Contenedor adaptativo con scroll REAL y forzado */
+/* Contenedor del Formulario Donorbox - El Lienzo Interno */
 .form-container {
     width: 100%;
-    flex-grow: 1; /* Absorbe el espacio disponible del modal */
-    overflow-y: auto !important; /* Fuerza la aparición del scroll vertical */
+    flex-grow: 1;
+    overflow-y: auto !important;
     overflow-x: hidden;
     background: #fff;
-    border-radius: 6px;
+    border: 3px solid var(--primary-paint); /* Encierra el widget en los colores de la comunidad */
+    border-radius: 0px;
     margin-top: 0.5rem;
-    padding: 10px;
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05); /* Sombra interna para definir el área */
-    -webkit-overflow-scrolling: touch; /* Suaviza el scroll en dispositivos iOS/Safari */
+    padding: 5px;
+    -webkit-overflow-scrolling: touch;
 }
 
-/* Asegura que el widget de Donorbox respete al contenedor padre */
-.form-container dbox-widget, 
-.form-container iframe {
-    max-width: 100% !important;
-    display: block;
-}
-
-/* Estilización de la barra de scroll interna */
+/* Scrollbars personalizadas con colores de pintura */
 .form-container::-webkit-scrollbar {
     width: 8px;
 }
 .form-container::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 4px;
+    background: var(--bg-dark);
 }
 .form-container::-webkit-scrollbar-thumb {
-    background: #bbb;
-    border-radius: 4px;
-}
-.form-container::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-color); /* Cambia al color arcilla al pasar el mouse */
+    background: var(--turquoise);
 }
 
-
-/* Footer */
+/* ==========================================================================
+   FOOTER (El Cierre del Círculo)
+   ========================================================================== */
 footer {
-    background-color: var(--primary-color);
-    color: var(--text-light);
+    background-color: #050505;
+    color: #777;
     text-align: center;
-    padding: 2rem 10%;
+    padding: 3rem 10%;
+    border-top: 4px solid var(--primary-paint);
 }
 
-/* Responsive Design */
+footer h2 {
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Adaptabilidad móvil básica */
 @media (max-width: 768px) {
     #story {
         flex-direction: column;
+    }
+    #hero h2 {
+        font-size: 2.5rem;
     }
     nav ul {
         display: none;
