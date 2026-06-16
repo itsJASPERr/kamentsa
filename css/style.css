@@ -1,43 +1,51 @@
 /* ==========================================================================
-   PALETA DE COLORES ANCESTRAL (Estilo Pintura Kamëntsá)
+   EL TELAR DIGITAL KAMËNTSÁ - HOJA DE ESTILOS HOLÍSTICA
+   Cada línea de código es un hilo en nuestro chumbe (faja tradicional).
    ========================================================================== */
+
 :root {
-    --bg-dark: #0c0c0c;       /* La Madre Tierra fértil, el útero del Valle */
-    --primary-paint: #f6007b;  /* Fucsia encendido de las lanas y chaquiras */
-    --accent-gold: #f39c12;    /* Amarillo dorado del Sol (Shinÿak) */
-    --turquoise: #00d2d3;      /* Turquesa vivo de los ríos del Valle */
-    --text-light: #f9f6f0;     /* Blanco fibra natural para lectura clara */
-    --card-bg: #161a18;        /* Verde selva ultra oscuro para fondos de tarjetas */
+    /* Los colores vivos de nuestra memoria y territorio */
+    --tierra-madre: #0c0c0c;     /* El útero oscuro y fértil del Valle de Sibundoy */
+    --sangre-viva: #f6007b;      /* Fucsia: nuestra fuerza vital, el tejido y el Bëtsknaté */
+    --padre-sol: #f39c12;        /* Dorado (Shinÿak): la luz y la claridad de pensamiento */
+    --agua-pura: #00d2d3;        /* Turquesa: los ríos de la montaña que sanan y conectan */
+    --fibra-natural: #f9f6f0;    /* Blanco crudo: la honestidad y pureza de la palabra */
+    --sombra-selva: #161a18;     /* Verde muy profundo para los espacios de descanso */
 }
 
+/* 
+  Estructura base: El lienzo tenso
+  No hay bordes curvos, todo respeta la geometría del telar de cintura. 
+*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Impact', 'Arial Black', 'Segoe UI', sans-serif; /* Buscando fuerza en trazos */
+    font-family: 'Impact', 'Arial Black', sans-serif; /* Trazos fuertes y presentes */
+    border-radius: 0 !important; /* Geometría sagrada, líneas rectas */
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
+    background-color: var(--tierra-madre);
+    color: var(--fibra-natural);
     line-height: 1.6;
-    /* Sutil textura que simula el tramado del tejido de lana o madera */
-    background-image: radial-gradient(#222 10%, transparent 10%),
-                      radial-gradient(#222 10%, transparent 10%);
+    /* Tramado sutil que simula el hilo tejido sobre el fondo oscuro */
+    background-image: radial-gradient(rgba(255,255,255,0.05) 10%, transparent 10%),
+                      radial-gradient(rgba(255,255,255,0.05) 10%, transparent 10%);
     background-size: 8px 8px;
     background-position: 0 0, 4px 4px;
 }
 
 p, a, span {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía limpia para lectura */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Claridad para la lectura */
 }
 
 /* ==========================================================================
-   NAVEGACIÓN (El Inicio del Camino)
+   EL CAMINO DE ENTRADA (Navegación Superior)
    ========================================================================== */
 header {
     background-color: rgba(12, 12, 12, 0.95);
-    border-bottom: 4px solid var(--primary-paint);
+    border-bottom: 4px solid var(--sangre-viva);
     padding: 1rem 5%;
     position: fixed;
     width: 100%;
@@ -49,11 +57,11 @@ header {
 }
 
 header h1 {
-    color: var(--accent-gold);
+    color: var(--padre-sol);
     font-size: 2rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    text-shadow: 2px 2px 0px var(--primary-paint);
+    text-shadow: 2px 2px 0px var(--sangre-viva);
 }
 
 nav ul {
@@ -64,7 +72,7 @@ nav ul {
 }
 
 nav ul li a {
-    color: var(--text-light);
+    color: var(--fibra-natural);
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
@@ -73,36 +81,34 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--turquoise);
+    color: var(--agua-pura); /* Al acercarse, fluye el agua */
 }
 
-/* Botón Donar del Menú - Forma de Ofrenda */
+/* La ofrenda (Botón de donación en el menú) */
 .btn-donate {
-    background-color: var(--primary-paint);
-    color: var(--text-light);
+    background-color: var(--sangre-viva);
+    color: var(--fibra-natural);
     padding: 0.6rem 1.2rem;
-    border: 2px solid var(--accent-gold);
-    border-radius: 0px; /* Bordes rectos, geométricos como el telar */
+    border: 2px solid var(--padre-sol);
     font-weight: bold;
     cursor: pointer;
     text-transform: uppercase;
-    box-shadow: 4px 4px 0px var(--turquoise);
+    box-shadow: 4px 4px 0px var(--agua-pura);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .btn-donate:hover {
     transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0px var(--accent-gold);
-    background-color: var(--turquoise);
-    color: var(--bg-dark);
+    box-shadow: 6px 6px 0px var(--padre-sol);
+    background-color: var(--agua-pura);
+    color: var(--tierra-madre);
 }
 
 /* ==========================================================================
-   HERO (Tejiendo el Futuro)
+   LA VISIÓN INICIAL (Hero Section)
    ========================================================================== */
 #hero {
     height: 100vh;
-    /* Contraste místico con los colores vivos superpuestos */
     background: linear-gradient(rgba(12, 12, 12, 0.85), rgba(22, 26, 24, 0.9)), 
                 url('https://images.unsplash.com/photo-1518182170546-076616fdcbfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
     display: flex;
@@ -116,23 +122,24 @@ nav ul li a:hover {
 
 #hero h2 {
     font-size: 4rem;
-    color: var(--text-light);
+    color: var(--fibra-natural);
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 4px 4px 0px var(--primary-paint), -2px -2px 0px var(--turquoise);
+    text-shadow: 4px 4px 0px var(--sangre-viva), -2px -2px 0px var(--agua-pura);
     margin-bottom: 1.5rem;
 }
 
 #hero p {
     font-size: 1.3rem;
     max-width: 700px;
-    color: #ccc;
+    color: #e0e0e0;
     margin-bottom: 2.5rem;
 }
 
+/* El llamado a la acción principal */
 .btn-main {
-    background-color: var(--accent-gold);
-    color: var(--bg-dark);
+    background-color: var(--padre-sol);
+    color: var(--tierra-madre);
     padding: 12px 30px;
     text-decoration: none;
     font-size: 1.2rem;
@@ -140,25 +147,25 @@ nav ul li a:hover {
     text-transform: uppercase;
     border: none;
     cursor: pointer;
-    box-shadow: 4px 4px 0px var(--primary-paint);
+    box-shadow: 4px 4px 0px var(--sangre-viva);
     transition: all 0.3s ease;
 }
 
 .btn-main:hover {
-    background-color: var(--primary-paint);
-    color: var(--text-light);
-    box-shadow: 4px 4px 0px var(--turquoise);
+    background-color: var(--sangre-viva);
+    color: var(--fibra-natural);
+    box-shadow: 4px 4px 0px var(--agua-pura);
 }
 
 /* ==========================================================================
-   SECCIONES Y DETALLES PINTADOS
+   LOS HILOS NARRATIVOS (Secciones del contenido)
    ========================================================================== */
 section {
     padding: 6rem 10%;
     position: relative;
 }
 
-/* Separadores que simulan las líneas de una faja tejida tradicional */
+/* La faja tendida en la base de cada sección */
 section::after {
     content: "";
     position: absolute;
@@ -166,19 +173,23 @@ section::after {
     left: 10%;
     width: 80%;
     height: 6px;
-    background: linear-gradient(90deg, var(--primary-paint) 25%, var(--accent-gold) 25%, var(--accent-gold) 50%, var(--turquoise) 50%, var(--turquoise) 75%, var(--primary-paint) 75%);
+    background: linear-gradient(90deg, 
+        var(--sangre-viva) 25%, 
+        var(--padre-sol) 25%, var(--padre-sol) 50%, 
+        var(--agua-pura) 50%, var(--agua-pura) 75%, 
+        var(--sangre-viva) 75%);
 }
 
 h2.section-title {
     text-align: center;
     font-size: 3rem;
-    color: var(--accent-gold);
+    color: var(--padre-sol);
     text-transform: uppercase;
     margin-bottom: 4rem;
-    text-shadow: 2px 2px 0px var(--primary-paint);
+    text-shadow: 2px 2px 0px var(--sangre-viva);
 }
 
-/* Nuestra Historia */
+/* Historia y Memoria */
 #story {
     display: flex;
     gap: 3rem;
@@ -186,27 +197,24 @@ h2.section-title {
 }
 
 .story-text h2 {
-    color: var(--turquoise) !important;
+    color: var(--agua-pura) !important;
     font-size: 2.5rem;
     text-transform: uppercase;
     margin-bottom: 1.5rem;
-}
-
-.story-text p {
-    color: #e0e0e0;
-    font-size: 1.1rem;
+    text-shadow: none;
 }
 
 .story-image {
     flex: 1;
     height: 380px;
-    border: 6px solid var(--primary-paint);
-    box-shadow: 8px 8px 0px var(--accent-gold);
-    border-radius: 0px;
+    border: 6px solid var(--sangre-viva);
+    box-shadow: 8px 8px 0px var(--padre-sol);
     background: url('https://images.unsplash.com/photo-1604028297491-9e7fbcff2d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover;
 }
 
-/* Tienda Artesanal */
+/* ==========================================================================
+   EL TRABAJO DE LAS MANOS (Tienda Artesanal)
+   ========================================================================== */
 #shop {
     background-color: #111;
 }
@@ -218,9 +226,8 @@ h2.section-title {
 }
 
 .card {
-    background-color: var(--card-bg);
+    background-color: var(--sombra-selva);
     border: 3px solid #222;
-    border-radius: 0px;
     overflow: hidden;
     transition: transform 0.3s, border-color 0.3s;
     text-align: center;
@@ -228,19 +235,19 @@ h2.section-title {
 
 .card:hover {
     transform: translateY(-5px);
-    border-color: var(--turquoise);
+    border-color: var(--agua-pura);
 }
 
 .card img {
     width: 100%;
     height: 240px;
     object-fit: cover;
-    border-bottom: 4px solid var(--accent-gold);
+    border-bottom: 4px solid var(--padre-sol);
 }
 
 .card h3 {
     margin: 1.5rem 0 0.5rem;
-    color: var(--text-light);
+    color: var(--fibra-natural);
     font-size: 1.4rem;
     text-transform: uppercase;
 }
@@ -254,7 +261,7 @@ h2.section-title {
 .card .price {
     font-size: 1.3rem;
     font-weight: bold;
-    color: var(--turquoise);
+    color: var(--agua-pura);
     margin: 1.5rem 0;
     display: block;
 }
@@ -263,7 +270,7 @@ h2.section-title {
     display: block;
     width: 100%;
     background-color: #222;
-    color: var(--text-light);
+    color: var(--fibra-natural);
     padding: 12px;
     text-transform: uppercase;
     font-weight: bold;
@@ -273,11 +280,11 @@ h2.section-title {
 }
 
 .card:hover .btn-buy {
-    background-color: var(--primary-paint);
+    background-color: var(--sangre-viva);
 }
 
 /* ==========================================================================
-   PROYECTO Y BARRA DE PROGRESO (Camino de la Serpiente/Huella)
+   EL CAMINO (Progreso del Proyecto)
    ========================================================================== */
 #project {
     text-align: center;
@@ -287,41 +294,40 @@ h2.section-title {
     max-width: 600px;
     margin: 2.5rem auto;
     background-color: #222;
-    border: 2px solid var(--text-light);
-    border-radius: 0px;
+    border: 2px solid var(--fibra-natural);
     padding: 3px;
     overflow: hidden;
 }
 
 .progress-bar {
     height: 35px;
-    /* La barra de carga tiene un patrón geométrico andino dinámico */
+    /* Patrón de la serpiente/camino tejido */
     background: repeating-linear-gradient(
       45deg,
-      var(--primary-paint),
-      var(--primary-paint) 10px,
-      var(--accent-gold) 10px,
-      var(--accent-gold) 20px
+      var(--sangre-viva),
+      var(--sangre-viva) 10px,
+      var(--padre-sol) 10px,
+      var(--padre-sol) 20px
     );
     width: 35%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-light);
+    color: var(--fibra-natural);
     font-weight: bold;
     text-shadow: 1px 1px 2px #000;
 }
 
 .goal-text {
     font-size: 1.4rem;
-    color: var(--turquoise);
+    color: var(--agua-pura);
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 2rem;
 }
 
 /* ==========================================================================
-   VENTANA EMERGENTE (El Altar del Formulario)
+   EL ALTAR DE OFRENDAS (Ventana Emergente / Modal)
    ========================================================================== */
 .modal-overlay {
     position: fixed;
@@ -329,7 +335,7 @@ h2.section-title {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Fondo negro denso para aislar la experiencia */
+    background-color: rgba(0, 0, 0, 0.9); /* Aislamiento y respeto al espacio */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -346,16 +352,15 @@ h2.section-title {
 }
 
 .modal-content {
-    background-color: var(--bg-dark);
-    /* Borde grueso que simula un marco de madera pintado con simbología */
-    border: 6px solid var(--accent-gold); 
+    background-color: var(--tierra-madre);
+    /* El marco ceremonial */
+    border: 6px solid var(--padre-sol); 
     padding: 2.5rem 1.5rem 1.5rem;
-    border-radius: 0px;
     width: 95%;
     max-width: 520px;
     max-height: 92vh;
     position: relative;
-    box-shadow: 0px 0px 30px rgba(246, 0, 123, 0.4);
+    box-shadow: 0px 0px 30px rgba(246, 0, 123, 0.4); /* Resplandor fucsia */
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -370,72 +375,65 @@ h2.section-title {
     background: none;
     border: none;
     cursor: pointer;
-    color: var(--primary-paint);
+    color: var(--sangre-viva);
     z-index: 2010;
 }
 
 .modal-close:hover {
-    color: var(--turquoise);
+    color: var(--agua-pura);
 }
 
 .modal-content h3 {
-    color: var(--text-light);
+    color: var(--fibra-natural);
     text-transform: uppercase;
     margin-bottom: 0.3rem;
     font-size: 2rem;
     letter-spacing: 1px;
 }
 
-.modal-content > p {
-    font-size: 1rem;
-    color: #aaa;
-    margin-bottom: 1rem;
-}
-
-/* Contenedor del Formulario Donorbox - El Lienzo Interno */
+/* El espacio blanco puro para el formulario */
 .form-container {
     width: 100%;
     flex-grow: 1;
     overflow-y: auto !important;
     overflow-x: hidden;
     background: #fff;
-    border: 3px solid var(--primary-paint); /* Encierra el widget en los colores de la comunidad */
-    border-radius: 0px;
+    border: 3px solid var(--sangre-viva); 
     margin-top: 0.5rem;
     padding: 5px;
     -webkit-overflow-scrolling: touch;
 }
 
-/* Scrollbars personalizadas con colores de pintura */
+/* Scrollbars pintadas */
 .form-container::-webkit-scrollbar {
     width: 8px;
 }
 .form-container::-webkit-scrollbar-track {
-    background: var(--bg-dark);
+    background: var(--tierra-madre);
 }
 .form-container::-webkit-scrollbar-thumb {
-    background: var(--turquoise);
+    background: var(--agua-pura);
 }
 
 /* ==========================================================================
-   FOOTER (El Cierre del Círculo)
+   EL CIERRE DEL CÍRCULO (Footer)
    ========================================================================== */
 footer {
     background-color: #050505;
     color: #777;
     text-align: center;
     padding: 3rem 10%;
-    border-top: 4px solid var(--primary-paint);
+    border-top: 4px solid var(--sangre-viva);
 }
 
 footer h2 {
-    color: var(--accent-gold);
+    color: var(--padre-sol);
     text-transform: uppercase;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
-/* Adaptabilidad móvil básica */
+/* Adaptación a dispositivos móviles */
 @media (max-width: 768px) {
     #story {
         flex-direction: column;
